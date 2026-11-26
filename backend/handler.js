@@ -16,7 +16,7 @@ exports.handler = async (event) => {
       const item = JSON.parse(event.body || "{}");
       if (!item.id || !item.name || !item.org) return {statusCode:400,headers,body:JSON.stringify({error:"id, name and org are required"})};
       const safe = {id:String(item.id),name:String(item.name).slice(0,100),org:String(item.org).slice(0,80),type:String(item.type||"Learning").slice(0,30),createdAt:new Date().toISOString()};
-      await client.send(new PutCommand({TableName:TABLE,Item:safe,ConditionExpression:"attribute_not_exists(id)")});
+      await client.send(new PutCommand({TableName:TABLE,Item:safe,ConditionExpression:"attribute_not_exists(id)"})});
       return {statusCode:201,headers,body:JSON.stringify({item:safe})};
     }
     return {statusCode:405,headers,body:JSON.stringify({error:"method not allowed"})};
