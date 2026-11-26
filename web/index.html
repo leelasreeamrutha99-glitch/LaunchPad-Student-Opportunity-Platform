@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10152b"><title>LaunchPad — Student Opportunity Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body><div class="layout">
+<aside class="sidebar"><a class="brand" href="#">✦ launchpad<span>.</span></a><small>WORKSPACE</small><nav><a href="#overview">▦ Overview</a><a href="#discover">⌕ Discover</a><a href="#tracker">◷ My tracker</a><a href="#achievements">✧ Achievements</a></nav><div class="tip"><b>Your next move matters.</b><p>Small steps today. Big opportunities tomorrow.</p></div></aside>
+<main>
+<header><div class="mobile-brand">✦ launchpad<span>.</span></div><span>Workspace / <b>Overview</b></span><div class="actions"><span class="live">● DEMO ENVIRONMENT</span><button id="themeBtn" aria-label="Toggle theme">◐</button></div></header>
+<section class="hero" id="overview"><div><small>YOUR NEXT CHAPTER STARTS HERE</small><h1>Make your next move<br><em>count.</em></h1><p>Your command center for opportunities, skills and momentum.</p></div><div class="orb">✦</div></section>
+<section class="stats">
+<article><label>Saved opportunities</label><strong id="savedCount">04</strong><small>In your shortlist</small></article><article><label>Applications in progress</label><strong id="progressCount">02</strong><small>One step at a time</small></article><article><label>Learning streak</label><strong><span id="streakCount">07</span> <i>days</i></strong><small>Build the habit</small></article><article><label>Badges earned</label><strong id="badgeCount">03</strong><small>Level up your skills</small></article>
+</section>
+<section class="focus"><div><small>FOCUS FOR TODAY</small><h2>One good move</h2><p>Complete one cloud learning module. Turn 20 minutes of learning into a skill you can show.</p><button class="primary" id="completeTask">Mark as complete →</button></div><div class="task"><b id="weeklyTotal">5</b><span>activities completed this week</span><small id="taskStatus">Not completed yet</small></div></section>
+<section id="discover" class="section"><div class="section-title"><div><small>HANDPICKED FOR YOUR GROWTH</small><h2>Explore opportunities</h2><p>Find the next challenge worth showing up for.</p></div><button class="ghost" id="seeAll">View all →</button></div>
+<div class="filters"><input id="searchInput" type="search" placeholder="Search roles, skills or organizations…"><div id="filters"><button class="chip selected" data-filter="All">All</button><button class="chip" data-filter="Internship">Internships</button><button class="chip" data-filter="Challenge">Challenges</button><button class="chip" data-filter="Campus">Campus</button><button class="chip" data-filter="Learning">Learning</button></div></div><div class="cards" id="opportunityGrid"></div></section>
+<section id="tracker" class="section"><div class="section-title"><div><small>KEEP YOUR NEXT STEPS VISIBLE</small><h2>Application tracker</h2><p>Every opportunity gets easier when you know the next action.</p></div><button class="outline" id="addOpportunity">＋ Add opportunity</button></div><div class="tracker"><div class="tracker-head"><span>OPPORTUNITY</span><span>TYPE</span><span>STATUS</span></div><div id="trackerRows"></div></div></section>
+<section id="achievements" class="section"><div class="section-title"><div><small>PROOF OF YOUR PROGRESS</small><h2>Achievements unlocked</h2></div></div><div class="badges"><article>✧ <b>Cloud Explorer</b><small>First cloud module</small></article><article>⌘ <b>Python Starter</b><small>Fundamentals practiced</small></article><article>ϟ <b>7-Day Spark</b><small>Seven days of learning</small></article></div></section>
+<footer>✦ launchpad. <span>Built for curious minds. Powered by possibility.</span><small id="connectionState">LOCAL DEMO MODE</small></footer>
+</main></div>
+<div id="toast" role="status"></div>
+<dialog id="addDialog"><form id="opportunityForm"><h2>Add an opportunity</h2><label>Opportunity name<input name="name" required maxlength="70" placeholder="Cloud engineering internship"></label><label>Organization<input name="org" required maxlength="50" placeholder="Organization"></label><label>Type<select name="type"><option>Internship</option><option>Challenge</option><option>Campus</option><option>Learning</option></select></label><label>Next action<input name="action" maxlength="90" placeholder="Prepare my application"></label><div class="dialog-actions"><button type="button" class="outline" id="cancelDialog">Cancel</button><button class="primary" type="submit">Add to tracker →</button></div></form></dialog>
+<script src="config.js"></script><script src="app.js"></script></body></html>
