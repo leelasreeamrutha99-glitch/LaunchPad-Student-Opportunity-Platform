@@ -39,10 +39,7 @@ export class LaunchpadStack extends cdk.Stack {
     });
     const fn = new lambda.Function(this, 'LaunchpadApi', {
       runtime: lambda.Runtime.NODEJS_22_X, handler: 'handler.handler',
-      code: lambda.Code.fromAsset(path.join(__dirname, '../../backend'), {
-        bundling: { image: lambda.Runtime.NODEJS_22_X.bundlingImage,
-          command: ['bash', '-c', 'npm install --omit=dev && cp -r . /asset-output'] },
-      }),
+      code: lambda.Code.fromAsset(path.join(__dirname, '../../backend')),
       timeout: cdk.Duration.seconds(10), memorySize: 256,
       environment: { TABLE_NAME: table.tableName }, logRetention: logs.RetentionDays.ONE_MONTH,
     });
